@@ -5,6 +5,7 @@
 #include <sstream>
 #include <iterator>
 #include <vector>
+#include <fstream>
 using namespace std;
 
 bool dfs(double tradeSum, unsigned node, unsigned par, map<unsigned, double> &path, set<unsigned> &visited, map<unsigned, map<unsigned, unsigned>> &tradeRule) {
@@ -29,14 +30,18 @@ bool dfs(double tradeSum, unsigned node, unsigned par, map<unsigned, double> &pa
 
 int main() {
   string str;
-  getline(cin,str);
+  ifstream infile("sample_input.txt");
+  // getline(cin,str);
+  getline(infile,str);
   unsigned pos = str.find(" ");
   unsigned M = stoul(str.substr(0, pos));
   unsigned N = stoul(str.substr(pos+1));
 
   map<unsigned, map<unsigned, unsigned>> tradeRule;
+
   for (unsigned i = 0; i < N; ++i) {
-    getline(cin,str);
+    // getline(cin,str);
+    getline(infile,str);
     stringstream ss(str);
     istream_iterator<string> begin_i(ss);
     istream_iterator<string> end_i;
