@@ -30,9 +30,9 @@ bool dfs(double tradeSum, unsigned node, unsigned par, map<unsigned, double> &pa
 
 int main() {
   string str;
-  ifstream infile("sample_input.txt");
-  // getline(cin,str);
-  getline(infile,str);
+  // ifstream infile("sample_input.txt");
+  getline(cin,str);
+  // getline(infile,str);
   unsigned pos = str.find(" ");
   unsigned M = stoul(str.substr(0, pos));
   unsigned N = stoul(str.substr(pos+1));
@@ -40,8 +40,8 @@ int main() {
   map<unsigned, map<unsigned, unsigned>> tradeRule;
 
   for (unsigned i = 0; i < N; ++i) {
-    // getline(cin,str);
-    getline(infile,str);
+    getline(cin,str);
+    // getline(infile,str);
     stringstream ss(str);
     istream_iterator<string> begin_i(ss);
     istream_iterator<string> end_i;
